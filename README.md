@@ -2,6 +2,11 @@
 
 A new Flutter project.
 
+## System Design 
+
+<img width="700" height="986" alt="system_design" src="https://github.com/user-attachments/assets/4b329446-cc35-48aa-82ea-e9f9b749086f" />
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
