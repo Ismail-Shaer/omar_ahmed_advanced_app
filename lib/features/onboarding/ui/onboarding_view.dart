@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 import '../../../core/theming/text_styles.dart';
 import '../widgets/DocLogoAndName.dart';
@@ -20,7 +21,7 @@ class OnboardingView extends StatelessWidget {
               child: Column(
                 children: [
                   const DocLogoAndName(),
-                  SizedBox(height: 30.h),
+                  Gap(30.h),
                   const DoctorImageAndText(),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -28,10 +29,10 @@ class OnboardingView extends StatelessWidget {
                       children: [
                         Text(
                           'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
-                          style: TextStyles.font13GrayRegular,
+                          style: TextStyles.font13GrayWeight400,
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 30.h),
+                        Gap(30.h),
                         const GetStartedButton(),
                       ],
                     ),
