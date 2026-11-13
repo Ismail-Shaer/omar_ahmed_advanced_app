@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:omar_ahmed_advanced_app/core/di/dependency_injection.dart';
 import 'package:omar_ahmed_advanced_app/core/routing/app_routes.dart';
+import 'package:omar_ahmed_advanced_app/features/login/logic/login_cubit.dart';
 import 'package:omar_ahmed_advanced_app/features/login/ui/login_view.dart';
 import 'package:omar_ahmed_advanced_app/features/onboarding/ui/onboarding_view.dart';
-
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -11,12 +12,14 @@ class AppRouter {
 
     switch (settings.name) {
       case AppRoutes.onBoardingRoute:
-        return MaterialPageRoute(
-          builder: (_) => const OnboardingView(),
-        );
+        return MaterialPageRoute(builder: (_) => const OnboardingView());
       case AppRoutes.loginRoute:
         return MaterialPageRoute(
-          builder: (_) => const LoginView(),
+          builder:
+              (_) => BlocProvider(
+                create: (context) => getIt<LoginCubit>(),
+                child: const LoginView(),
+              ),
         );
 
       default:
